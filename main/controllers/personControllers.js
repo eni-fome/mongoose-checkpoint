@@ -65,16 +65,6 @@ exports.deletePersonById = async (req, res) => {
   }
 };
 
-exports.createPersons = async (req, res) => {
-  const persons = req.body; // Assuming req.body is an array of person objects
-
-  try {
-    const createdPersons = await Person.create(persons);
-    res.status(201).json(createdPersons);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-};
 
 exports.generateRandomUsers = async (req, res) => {
   const numberOfUsers = req.body.numberOfUsers || 10; // Default to 10 users if not specified
